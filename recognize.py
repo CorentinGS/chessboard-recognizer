@@ -6,9 +6,10 @@ from io import BytesIO
 from functools import reduce
 import os
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
+os.environ["TF_USE_LEGACY_KERAS"]="1"
 
 import tensorflow as tf
-from tensorflow.keras import models
+from tf_keras import models
 import numpy as np
 
 from constants import (
@@ -116,6 +117,9 @@ def predict_tile(tile_img_data):
     max_probability = max(probabilities)
     i = probabilities.index(max_probability)
     return (FEN_CHARS[i], max_probability)
+
+
+
 
 if __name__ == '__main__':
     import argparse

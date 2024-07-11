@@ -5,7 +5,7 @@ from glob import glob
 from pathlib import Path
 
 import tensorflow as tf
-from tensorflow.keras import layers, models
+from tf_keras import layers, models
 import numpy as np
 
 from constants import TILES_DIR, NN_MODEL_PATH, FEN_CHARS, USE_GRAYSCALE

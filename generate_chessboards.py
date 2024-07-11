@@ -55,6 +55,7 @@ def generate_random_chessboards(n, img_url_template, fen_chars=FEN_CHARS) -> Non
 
 def jinchess_img_url_template():
     url_template = "http://jinchess.com/chessboard/?p={}"
+    '''
     jinchess_board_themes = [
         None,
         "cold-marble",
@@ -81,12 +82,14 @@ def jinchess_img_url_template():
         url_template += "&ps={}".format(pieces)
     if np.random.choice(2, 1)[0] == 1:
         url_template += "&gs"
+    '''
+    url_template += "&dsc=%2328738a&lsc=%23cce5f3&ps=merida-flat"
     return url_template
 
 
 if __name__ == '__main__':
-    # for i in range(100):
-    #     generate_random_chessboards(1, jinchess_img_url_template(), "-KQRBNPkqrbnp")
+    for i in range(100):
+        generate_random_chessboards(1, jinchess_img_url_template(), "-KQRBNPkqrbnp")
     generate_random_chessboards(
         5, "http://www.fen-to-image.com/image/32/{}"
     )
